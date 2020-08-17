@@ -184,6 +184,8 @@ class Controller(polyinterface.Controller):
             self.tag['wind_min'] = 'windSpeedMinKPH'
             self.tag['wind_max'] = 'windSpeedMaxKPH'
             self.tag['wind_avg'] = 'avgKPH'
+            self.tag['wind_min_summ'] = 'minKPH'
+            self.tag['wind_max_summ'] = 'maxKPH'
             self.tag['winddir_min'] = 'windDirMinDEG'
             self.tag['winddir_max'] = 'windDirMaxDEG'
             self.tag['uv'] = 'uvi'
@@ -220,6 +222,8 @@ class Controller(polyinterface.Controller):
             self.tag['wind_min'] = 'windSpeedMinMPH'
             self.tag['wind_max'] = 'windSpeedMaxMPH'
             self.tag['wind_avg'] = 'avgMPH'
+            self.tag['wind_min_summ'] = 'minMPH'
+            self.tag['wind_max_summ'] = 'maxMPH'
             self.tag['winddir_min'] = 'windDirMinDEG'
             self.tag['winddir_max'] = 'windDirMaxDEG'
             self.tag['uv'] = 'uvi'
@@ -345,6 +349,13 @@ class Controller(polyinterface.Controller):
                 self.update_driver('GV0', rd['temp'][self.tag['temp_max_summ']])
                 LOGGER.debug('Setting min temp to: ' + str(rd['temp'][self.tag['temp_min_summ']]))
                 self.update_driver('GV1', rd['temp'][self.tag['temp_min_summ']])
+            if 'wind' in rd:
+                LOGGER.debug('Setting avg wind to: ' + str(rd['temp'][self.tag['wind_avg']]))
+                self.update_driver('GV21', rd['temp'][self.tag['wind_avg']])
+                LOGGER.debug('Setting max wind to: ' + str(rd['temp'][self.tag['wind_max_summ']]))
+                self.update_driver('GV7', rd['temp'][self.tag['wind_max_summ']])
+                LOGGER.debug('Setting min wind to: ' + str(rd['temp'][self.tag['wind_min_summ']]))
+                self.update_driver('GV8', rd['temp'][self.tag['wind_min_summ']])
            # if 'rh' in rd: 
            #     LOGGER.debug('Setting max humid to: ' + str(rd['rh'][self.tag['humidity_max_summ']]))
            #     self.update_driver('GV22', rd['rh'][self.tag['humidity_max_summ']])
