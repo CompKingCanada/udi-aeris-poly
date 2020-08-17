@@ -353,7 +353,7 @@ class Controller(polyinterface.Controller):
                 LOGGER.debug('Setting min wind to: ' + str(rd['wind'][self.tag['wind_min_summ']]))
                 self.update_driver('GV8', rd['wind'][self.tag['wind_min_summ']])
             if 'rh' in rd: 
-                LOGGER.debug('Setting max humid to: ' + str(rd['rh'][self.tag['humidity_avg']]))
+                LOGGER.debug('Setting avg humid to: ' + str(rd['rh'][self.tag['humidity_avg']]))
                 self.update_driver('GV17', rd['rh'][self.tag['humidity_avg']])                
         except Exception as e:
             LOGGER.error('Precipitation and max/min/average summary update failure')
