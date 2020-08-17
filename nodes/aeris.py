@@ -345,10 +345,11 @@ class Controller(polyinterface.Controller):
                 self.update_driver('GV0', rd['temp'][self.tag['temp_max_summ']])
                 LOGGER.debug('Setting min temp to: ' + str(rd['temp'][self.tag['temp_min_summ']]))
                 self.update_driver('GV1', rd['temp'][self.tag['temp_min_summ']])
-                LOGGER.debug('Setting max humid to: ' + str(rd['rh'][self.tag['humidity_max_summ']]))
-                self.update_driver('GV22', rd['rh'][self.tag['humidity_max_summ']])
-                LOGGER.debug('Setting min humid to: ' + str(rd['rh'][self.tag['humidity_min_summ']]))
-                self.update_driver('GV23', rd['rh'][self.tag['humidity_min_summ']])
+           # if 'rh' in rd: 
+           #     LOGGER.debug('Setting max humid to: ' + str(rd['rh'][self.tag['humidity_max_summ']]))
+           #     self.update_driver('GV22', rd['rh'][self.tag['humidity_max_summ']])
+           #     LOGGER.debug('Setting min humid to: ' + str(rd['rh'][self.tag['humidity_min_summ']]))
+           #     self.update_driver('GV23', rd['rh'][self.tag['humidity_min_summ']])
         except Exception as e:
             LOGGER.error('Precipitation and max/min/average summary update failure')
             LOGGER.error(e)
