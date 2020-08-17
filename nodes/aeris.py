@@ -343,8 +343,8 @@ class Controller(polyinterface.Controller):
                 LOGGER.debug('Setting precipitation to: ' + str(rd['precip'][self.tag['precip_summary']]))
                 self.update_driver('GV6', rd['precip'][self.tag['precip_summary']])
             if 'temp' in rd:
-                LOGGER.debug('Setting avg temp to: ' + str(rd['temp'][self.tag['temp_avg']]))
-                self.update_driver('GV24', rd['temp'][self.tag['temp_avg']])
+                # LOGGER.debug('Setting avg temp to: ' + str(rd['temp'][self.tag['temp_avg']]))
+                # self.update_driver('GV24', rd['temp'][self.tag['temp_avg']])
                 LOGGER.debug('Setting max temp to: ' + str(rd['temp'][self.tag['temp_max_summ']]))
                 self.update_driver('GV0', rd['temp'][self.tag['temp_max_summ']])
                 LOGGER.debug('Setting min temp to: ' + str(rd['temp'][self.tag['temp_min_summ']]))
