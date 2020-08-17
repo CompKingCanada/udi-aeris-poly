@@ -269,10 +269,10 @@ class Controller(polyinterface.Controller):
             self.update_driver('GV3', ob[self.tag['heatindex']])
             self.update_driver('GV4', ob[self.tag['windchill']])
             self.update_driver('GV2', ob[self.tag['feelslike']])
-#            self.update_driver('GV0', ob[self.tag['temp_max']]) - Comes from Summary
-#            self.update_driver('GV1', ob[self.tag['temp_min']]) - Comes from Summary
-#            self.update_driver('GV22', ob[self.tag['humidity_max']]) - Comes from Summary
-#            self.update_driver('GV23', ob[self.tag['humidity_min']]) - Comes from Summary
+            # self.update_driver('GV0', ob[self.tag['temp_max']]) - Comes from Summary
+            # self.update_driver('GV1', ob[self.tag['temp_min']]) - Comes from Summary
+            # self.update_driver('GV22', ob[self.tag['humidity_max']]) - Comes from Summary
+            # self.update_driver('GV23', ob[self.tag['humidity_min']]) - Comes from Summary
             self.update_driver('SOLRAD', ob[self.tag['solarrad']])
             self.update_driver('UV', ob[self.tag['uv']])
             self.update_driver('GV15', ob[self.tag['snow']])
