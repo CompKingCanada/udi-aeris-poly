@@ -36,9 +36,11 @@ ST-ctl-GV17-NAME = Air Quality
 ST-ctl-GV18-NAME = Chance of Rain
 ST-ctl-GV19-NAME = Day
 ST-ctl-GV20-NAME = Evapotranspiration
-ST-ctl-GV21-NAME = Wind Run
+ST-ctl-GV21-NAME = Avg Wind Speed
 ST-ctl-GV22-NAME = Max Humidity
-ST-ctl-GV22-NAME = Min Humidity
+ST-ctl-GV23-NAME = Min Humidity
+ST-ctl-GV24-NAME = Avg Temperature
+ST-ctl-GV25-NAME = Avg Humidity
 
 
 ND-daily-NAME = Daily Forecast
