@@ -313,7 +313,7 @@ class Controller(polyinterface.Controller):
             LOGGER.error(e)
 
         try:
-            # Get precipitation summary
+            # Get precipitation and max/min/average summary
             jdata = self.get_weather_data('observations/summary')
             if jdata == None:
                 LOGGER.error('Precipitation summary query returned no data')
@@ -329,8 +329,11 @@ class Controller(polyinterface.Controller):
             if 'precip' in rd:
                 LOGGER.debug('Setting precipitation to: ' + str(rd['precip'][self.tag['precip_summary']]))
                 self.update_driver('GV6', rd['precip'][self.tag['precip_summary']])
+            if 'temp' in rd:
+                LOGGER.debug('Setting max temp to: ' + str(rd['temp'][self.tag['precip_summary']]))
+                self.update_driver('GV0', rd['temp'][self.tag['temp_max']])
         except Exception as e:
-            LOGGER.error('Precipitation summary update failure')
+            LOGGER.error('Precipitation and max/min/average summary update failure')
             LOGGER.error(e)
             self.update_driver('GV6', precipitation)
                 
