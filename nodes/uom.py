@@ -32,10 +32,10 @@ def get_uom(units):
             'SPEED': 32,    # wind speed
             'GV5': 32,      # wind gusts
             'GV6': 82,      # rain
-            'GV7': 32,      # wind max
-            'GV8': 32,      # wind min  
-            'GV9': 56,      # moon phase
-            'GV10': 56,     # ozone
+            'GV7': 32,      # max wind
+            'GV8': 32,      # min wind
+            'GV9': 32,      # avg wind
+            'GV10': 4,      # avg temp
             'GV11': 25,     # climate coverage
             'GV12': 25,     # climate intensity
             'GV13': 25,     # climate conditions
@@ -43,15 +43,10 @@ def get_uom(units):
             'GV15': 82,     # snow depth
             'DISTANC': 83,  # visibility (kilometers)
             'UV': 71,       # UV index
-            'GV17': 56,     # Air Quality
+            'GV17': 22,     # avg humidity
             'GV18': 22,     # chance of precipitation
             'GV19': 25,     # day of week
-            'GV20': 106,    # ETo
-            'GV21': 32,     # wind avg
-            'GV22': 22,     # max humidity
-            'GV23': 22,     # min humidity
-            'GV24': 4,      # avg temp
-            'GV25': 22,     # avg humidity
+            'GV20': 106,    # ETo            
         }
     elif unit_cfg == 'uk':
         uom = {
@@ -73,8 +68,8 @@ def get_uom(units):
             'GV6': 105,     # rain
             'GV7': 48,      # max wind
             'GV8': 48,      # min wind  
-            'GV9': 56,      # moon phase
-            'GV10': 56,     # ozone
+            'GV9': 48,      # avg wind
+            'GV10': 4,      # avg temp
             'GV11': 25,     # climate coverage
             'GV12': 25,     # climate intensity
             'GV13': 25,     # climate conditions
@@ -82,15 +77,10 @@ def get_uom(units):
             'GV15': 105,    # snow depth
             'DISTANC': 116, # visibility
             'UV': 71,       # UV index
-            'GV17': 56,     # Air Quality
+            'GV17': 22,     # avg humidity
             'GV18': 22,     # chance of precipitation
             'GV19': 25,     # day of week
             'GV20': 120,    # ETo
-            'GV21': 48,     # wind avg
-            'GV22': 22,     # max humidity
-            'GV23': 22,     # min humidity
-            'GV24': 4,      # avg temp
-            'GV25': 22,     # avg humidity
         }
     else:
         uom = {
@@ -112,8 +102,8 @@ def get_uom(units):
             'GV6': 105,     # rain
             'GV7': 48,      # max wind
             'GV8': 48,      # min wind   
-            'GV9': 56,      # moon phase
-            'GV10': 56,     # ozone
+            'GV9': 48,      # avg wind
+            'GV10': 17,     # avg temp
             'GV11': 25,     # climate coverage
             'GV12': 25,     # climate intensity
             'GV13': 25,     # climate conditions
@@ -121,15 +111,10 @@ def get_uom(units):
             'GV15': 105,    # snow depth
             'DISTANC': 116, # visibility
             'UV': 71,       # UV index
-            'GV17': 56,     # Air Quality
+            'GV17': 22,     # avg humidity
             'GV18': 22,     # chance of precipitation
             'GV19': 25,     # day of week
             'GV20': 120,    # ETo
-            'GV21': 48,     # wind avg
-            'GV22': 22,     # max humidity
-            'GV23': 22,     # min humidity
-            'GV24': 17,     # avg temp
-            'GV25': 22,     # avg humidity
         }
 
     return uom
