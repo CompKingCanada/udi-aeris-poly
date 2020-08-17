@@ -47,6 +47,9 @@ def get_uom(units):
             'GV18': 22,     # chance of precipitation
             'GV19': 25,     # day of week
             'GV20': 106,    # ETo
+            'GV21': 56,     # daily wind run
+            'GV22': 22,     # max humidity
+            'GV23': 22,     # min humidity
         }
     elif unit_cfg == 'uk':
         uom = {
@@ -81,6 +84,9 @@ def get_uom(units):
             'GV18': 22,     # chance of precipitation
             'GV19': 25,     # day of week
             'GV20': 120,    # ETo
+            'GV21': 56,     # daily wind run
+            'GV22': 22,     # max humidity
+            'GV23': 22,     # min humidity
         }
     else:
         uom = {
@@ -115,6 +121,9 @@ def get_uom(units):
             'GV18': 22,     # chance of precipitation
             'GV19': 25,     # day of week
             'GV20': 120,    # ETo
+            'GV21': 56,     # daily wind run
+            'GV22': 22,     # max humidity
+            'GV23': 22,     # min humidity
         }
 
     return uom
