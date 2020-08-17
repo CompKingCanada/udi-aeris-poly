@@ -462,6 +462,8 @@ class Controller(polyinterface.Controller):
             {'driver': 'WINDDIR', 'value': 0, 'uom': 76},  # direction
             {'driver': 'SPEED', 'value': 0, 'uom': 32},    # wind speed
             {'driver': 'GV5', 'value': 0, 'uom': 32},      # gust speed
+            {'driver': 'GV0', 'value': 0, 'uom': 4},       # max temp
+            {'driver': 'GV1', 'value': 0, 'uom': 4},       # min temp
             {'driver': 'GV2', 'value': 0, 'uom': 4},       # feels like
             {'driver': 'GV3', 'value': 0, 'uom': 4},       # heat index
             {'driver': 'GV4', 'value': 0, 'uom': 4},       # wind chill
@@ -471,10 +473,13 @@ class Controller(polyinterface.Controller):
             {'driver': 'GV12', 'value': 0, 'uom': 25},     # climate intensity
             {'driver': 'GV13', 'value': 0, 'uom': 25},     # climate conditions
             {'driver': 'GV14', 'value': 0, 'uom': 22},     # cloud conditions
+            {'driver': 'GV22', 'value': 0, 'uom': 22},     # max humidity
+            {'driver': 'GV23', 'value': 0, 'uom': 22},     # min humidity
             {'driver': 'DISTANC', 'value': 0, 'uom': 83},  # visibility
             {'driver': 'SOLRAD', 'value': 0, 'uom': 74},   # solar radiataion
             {'driver': 'UV', 'value': 0, 'uom': 71},       # uv index
             {'driver': 'GVP', 'value': 30, 'uom': 25},     # log level
+        
             ]
 
 
