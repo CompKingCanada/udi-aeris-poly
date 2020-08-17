@@ -129,12 +129,13 @@ class Controller(polyinterface.Controller):
         request += '&client_secret=' + self.params.get('ClientSecret')
 
         if extra == 'forecasts':
-            request += '&filter=mdnt2mdnt'
-            request += '&precise'
+            request += '&filter=mdnt2mdnt,precise'
             request += '&limit=12'
-
-        if extra == 'observations/summary':
+        elif extra == 'observations/summary':
             request += '&fields=periods.summary.precip,periods.summary.temp,periods.summary.rh,periods.summary.wind'
+            request += '&filter=precise'
+        else:
+            request += '&filter=precise'
 
         #FIXME: add unit support if available
         #request += '&units=' + self.units
