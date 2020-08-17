@@ -174,9 +174,12 @@ class Controller(polyinterface.Controller):
             self.tag['temp_avg'] = 'avgC'
             self.tag['temp_max'] = 'maxTempC'
             self.tag['temp_max_summ'] = 'maxC'
+            self.tag['temp_min_summ'] = 'minC'
             self.tag['humidity_min'] = 'minHumidity'
             self.tag['humidity_avg'] = 'avg'
             self.tag['humidity_max'] = 'maxHumidity'
+            self.tag['humidity_min_summ'] = 'min'
+            self.tag['humidity_max_summ'] = 'max'
             self.tag['wind_min'] = 'windSpeedMinKPH'
             self.tag['wind_max'] = 'windSpeedMaxKPH'
             self.tag['wind_avg'] = 'avgKPH'
@@ -203,6 +206,7 @@ class Controller(polyinterface.Controller):
             self.tag['feelslike'] = 'feelslikeF'
             self.tag['solarrad'] = 'solradWM2'
             self.tag['sky'] = 'sky'
+            # to be update with new variables
             self.tag['temp_min'] = 'minTempF'
             self.tag['temp_avg'] = 'avgF'
             self.tag['temp_max'] = 'maxTempF'
@@ -336,6 +340,12 @@ class Controller(polyinterface.Controller):
                 self.update_driver('GV24', rd['temp'][self.tag['temp_avg']])
                 LOGGER.debug('Setting max temp to: ' + str(rd['temp'][self.tag['temp_max_summ']]))
                 self.update_driver('GV0', rd['temp'][self.tag['temp_max_summ']])
+                LOGGER.debug('Setting min temp to: ' + str(rd['temp'][self.tag['temp_min_summ']]))
+                self.update_driver('GV1', rd['temp'][self.tag['temp_min_summ']])
+                LOGGER.debug('Setting max humid to: ' + str(rd['rh'][self.tag['humidity_max_summ']]))
+                self.update_driver('GV22', rd['rh'][self.tag['humidity_max_summ']])
+                LOGGER.debug('Setting min humid to: ' + str(rd['rh'][self.tag['humidity_min_summ']]))
+                self.update_driver('GV23', rd['rh'][self.tag['humidity_min_summ']])
         except Exception as e:
             LOGGER.error('Precipitation and max/min/average summary update failure')
             LOGGER.error(e)
