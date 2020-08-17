@@ -504,6 +504,8 @@ class Controller(polyinterface.Controller):
             {'driver': 'GV3', 'value': 0, 'uom': 4},       # heat index
             {'driver': 'GV4', 'value': 0, 'uom': 4},       # wind chill
             {'driver': 'GV6', 'value': 0, 'uom': 82},      # rain
+            {'driver': 'GV7', 'value': 0, 'uom': 32},      # max wind
+            {'driver': 'GV8', 'value': 0, 'uom': 32},      # min wind
             {'driver': 'GV15', 'value': 0, 'uom': 82},     # snow depth
             {'driver': 'GV11', 'value': 0, 'uom': 25},     # climate coverage
             {'driver': 'GV12', 'value': 0, 'uom': 25},     # climate intensity
