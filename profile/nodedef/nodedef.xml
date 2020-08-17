@@ -3,7 +3,7 @@
     <editors />
     <sts>
       <st id="ST" editor="bool" />
-      <st id="GV24" editor="TEMPERATURE" />
+      <st id="GV10" editor="TEMPERATURE" />
       <st id="CLITEMP" editor="TEMPERATURE" />
       <st id="CLIHUM" editor="PERCENT" />
       <st id="GV0" editor="TEMPERATURE" />
@@ -13,10 +13,8 @@
       <st id="SOLRAD" editor="SOLARRAD" />
       <st id="UV" editor="UV" />
       <st id="GV20" editor="ET" />
-      <st id="GV21" editor="SPEED" />
-      <st id="GV22" editor="PERCENT" />
-      <st id="GV23" editor="PERCENT" />
-      <st id="GV25" editor="TEMPERATURE" />
+      <st id="GV9" editor="SPEED" />
+      <st id="GV17" editor="PERCENT" />
 	    
     </sts>
     <cmds>
