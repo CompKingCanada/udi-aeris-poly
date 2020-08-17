@@ -202,14 +202,14 @@ class Controller(polyinterface.Controller):
             self.tag['feelslike'] = 'feelslikeF'
             self.tag['solarrad'] = 'solradWM2'
             self.tag['sky'] = 'sky'
-            self.tag['temp_min'] = 'minF'
+            self.tag['temp_min'] = 'minTempF'
             self.tag['temp_avg'] = 'avgF'
-            self.tag['temp_max'] = 'maxF'
-            self.tag['humidity_min'] = 'min'
+            self.tag['temp_max'] = 'maxTempF'
+            self.tag['humidity_min'] = 'minHumidity'
             self.tag['humidity_avg'] = 'avg'
-            self.tag['humidity_max'] = 'max'
-            self.tag['wind_min'] = 'mimMPH'
-            self.tag['wind_max'] = 'maxMPH'
+            self.tag['humidity_max'] = 'maxHumidity'
+            self.tag['wind_min'] = 'windSpeedMinMPH'
+            self.tag['wind_max'] = 'windSpeedMaxMPH'
             self.tag['wind_avg'] = 'avgMPH'
             self.tag['winddir_min'] = 'windDirMinDEG'
             self.tag['winddir_max'] = 'windDirMaxDEG'
@@ -330,8 +330,8 @@ class Controller(polyinterface.Controller):
                 LOGGER.debug('Setting precipitation to: ' + str(rd['precip'][self.tag['precip_summary']]))
                 self.update_driver('GV6', rd['precip'][self.tag['precip_summary']])
             if 'temp' in rd:
-                LOGGER.debug('Setting max temp to: ' + str(rd['temp'][self.tag['temp_max']]))
-                self.update_driver('GV0', rd['temp'][self.tag['temp_max']])
+                LOGGER.debug('Setting avg temp to: ' + str(rd['temp'][self.tag['temp_avg']]))
+                self.update_driver('GV24', rd['temp'][self.tag['temp_avg']])
         except Exception as e:
             LOGGER.error('Precipitation and max/min/average summary update failure')
             LOGGER.error(e)
