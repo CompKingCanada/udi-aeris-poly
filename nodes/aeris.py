@@ -171,12 +171,14 @@ class Controller(polyinterface.Controller):
             self.tag['solarrad'] = 'solradWM2'
             self.tag['sky'] = 'sky'
             self.tag['temp_min'] = 'minTempC'
+            self.tag['temp_avg'] = 'avgTempC'
             self.tag['temp_max'] = 'maxTempC'
             self.tag['humidity_min'] = 'minHumidity'
+            self.tag['humidity_avg'] = 'avgHumidity'
             self.tag['humidity_max'] = 'maxHumidity'
             self.tag['wind_min'] = 'windSpeedMinKPH'
             self.tag['wind_max'] = 'windSpeedMaxKPH'
-            self.tag['wind_run'] = 'windRunKM'
+            self.tag['wind_avg'] = 'windSpeedAvgKPH'
             self.tag['winddir_min'] = 'windDirMinDEG'
             self.tag['winddir_max'] = 'windDirMaxDEG'
             self.tag['uv'] = 'uvi'
@@ -201,12 +203,14 @@ class Controller(polyinterface.Controller):
             self.tag['solarrad'] = 'solradWM2'
             self.tag['sky'] = 'sky'
             self.tag['temp_min'] = 'minTempF'
+            self.tag['temp_avg'] = 'avgTempF'
             self.tag['temp_max'] = 'maxTempF'
             self.tag['humidity_min'] = 'minHumidity'
+            self.tag['humidity_avg'] = 'avgHumidity'
             self.tag['humidity_max'] = 'maxHumidity'
             self.tag['wind_min'] = 'windSpeedMinMPH'
             self.tag['wind_max'] = 'windSpeedMaxMPH'
-            self.tag['wind_run'] = 'windRunMI'
+            self.tag['wind_avg'] = 'windSpeedAvgKPH'
             self.tag['winddir_min'] = 'windDirMinDEG'
             self.tag['winddir_max'] = 'windDirMaxDEG'
             self.tag['uv'] = 'uvi'
@@ -264,11 +268,11 @@ class Controller(polyinterface.Controller):
             self.update_driver('DEWPT', ob[self.tag['dewpoint']])
             self.update_driver('GV3', ob[self.tag['heatindex']])
             self.update_driver('GV4', ob[self.tag['windchill']])
-            self.update_driver('GV2', ob[self.tag['feelslike']])
-            self.update_driver('GV0', ob[self.tag['temp_max']])
-            self.update_driver('GV1', ob[self.tag['temp_min']])
-            self.update_driver('GV22', ob[self.tag['humidity_max']])
-            self.update_driver('GV23', ob[self.tag['humidity_min']])
+#            self.update_driver('GV2', ob[self.tag['feelslike']]) - Comes from Summary
+#            self.update_driver('GV0', ob[self.tag['temp_max']]) - Comes from Summary
+#            self.update_driver('GV1', ob[self.tag['temp_min']]) - Comes from Summary
+#            self.update_driver('GV22', ob[self.tag['humidity_max']]) - Comes from Summary
+#            self.update_driver('GV23', ob[self.tag['humidity_min']]) - Comes from Summary
             self.update_driver('SOLRAD', ob[self.tag['solarrad']])
             self.update_driver('UV', ob[self.tag['uv']])
             self.update_driver('GV15', ob[self.tag['snow']])
@@ -476,6 +480,8 @@ class Controller(polyinterface.Controller):
             {'driver': 'GV20', 'value': 0, 'uom': 106},    # mm/day ETo
             {'driver': 'GV22', 'value': 0, 'uom': 22},     # max humidity
             {'driver': 'GV23', 'value': 0, 'uom': 22},     # min humidity
+            {'driver': 'GV24', 'value': 0, 'uom': 4},      # avg temp
+            {'driver': 'GV25', 'value': 0, 'uom': 22},     # avg humidity
             {'driver': 'DISTANC', 'value': 0, 'uom': 83},  # visibility
             {'driver': 'SOLRAD', 'value': 0, 'uom': 74},   # solar radiataion
             {'driver': 'UV', 'value': 0, 'uom': 71},       # uv index
