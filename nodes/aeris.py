@@ -134,7 +134,7 @@ class Controller(polyinterface.Controller):
             request += '&limit=12'
 
         if extra == 'observations/summary':
-            request += '&fields=periods.summary.precip'
+            request += '&fields=periods.summary.precip,periods.summary.temp,periods.summary.rh,periods.summary.wind'
 
         #FIXME: add unit support if available
         #request += '&units=' + self.units
