@@ -3,6 +3,7 @@
     <editors />
     <sts>
       <st id="ST" editor="bool" />
+      <st id="GV24" editor="TEMPERATURE" />
       <st id="CLITEMP" editor="TEMPERATURE" />
       <st id="CLIHUM" editor="PERCENT" />
       <st id="GV0" editor="TEMPERATURE" />
@@ -30,7 +31,6 @@
       <st id="GV21" editor="SPEED" />
       <st id="GV22" editor="PERCENT" />
       <st id="GV23" editor="PERCENT" />
-      <st id="GV24" editor="TEMPERATURE" />
       <st id="GV25" editor="TEMPERATURE" />
 	    
     </sts>
