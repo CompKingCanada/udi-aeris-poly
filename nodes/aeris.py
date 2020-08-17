@@ -170,15 +170,15 @@ class Controller(polyinterface.Controller):
             self.tag['feelslike'] = 'feelslikeC'
             self.tag['solarrad'] = 'solradWM2'
             self.tag['sky'] = 'sky'
-            self.tag['temp_min'] = 'minTempC'
-            self.tag['temp_avg'] = 'avgTempC'
-            self.tag['temp_max'] = 'maxTempC'
-            self.tag['humidity_min'] = 'minHumidity'
-            self.tag['humidity_avg'] = 'avgHumidity'
-            self.tag['humidity_max'] = 'maxHumidity'
-            self.tag['wind_min'] = 'windSpeedMinKPH'
-            self.tag['wind_max'] = 'windSpeedMaxKPH'
-            self.tag['wind_avg'] = 'windSpeedAvgKPH'
+            self.tag['temp_min'] = 'minC'
+            self.tag['temp_avg'] = 'avgC'
+            self.tag['temp_max'] = 'maxC'
+            self.tag['humidity_min'] = 'min'
+            self.tag['humidity_avg'] = 'avg'
+            self.tag['humidity_max'] = 'max'
+            self.tag['wind_min'] = 'minKPH'
+            self.tag['wind_max'] = 'maxKPH'
+            self.tag['wind_avg'] = 'avgKPH'
             self.tag['winddir_min'] = 'windDirMinDEG'
             self.tag['winddir_max'] = 'windDirMaxDEG'
             self.tag['uv'] = 'uvi'
@@ -202,15 +202,15 @@ class Controller(polyinterface.Controller):
             self.tag['feelslike'] = 'feelslikeF'
             self.tag['solarrad'] = 'solradWM2'
             self.tag['sky'] = 'sky'
-            self.tag['temp_min'] = 'minTempF'
-            self.tag['temp_avg'] = 'avgTempF'
-            self.tag['temp_max'] = 'maxTempF'
-            self.tag['humidity_min'] = 'minHumidity'
-            self.tag['humidity_avg'] = 'avgHumidity'
-            self.tag['humidity_max'] = 'maxHumidity'
-            self.tag['wind_min'] = 'windSpeedMinMPH'
-            self.tag['wind_max'] = 'windSpeedMaxMPH'
-            self.tag['wind_avg'] = 'windSpeedAvgKPH'
+            self.tag['temp_min'] = 'minF'
+            self.tag['temp_avg'] = 'avgF'
+            self.tag['temp_max'] = 'maxF'
+            self.tag['humidity_min'] = 'min'
+            self.tag['humidity_avg'] = 'avg'
+            self.tag['humidity_max'] = 'max'
+            self.tag['wind_min'] = 'mimMPH'
+            self.tag['wind_max'] = 'maxMPH'
+            self.tag['wind_avg'] = 'avgMPH'
             self.tag['winddir_min'] = 'windDirMinDEG'
             self.tag['winddir_max'] = 'windDirMaxDEG'
             self.tag['uv'] = 'uvi'
@@ -330,7 +330,7 @@ class Controller(polyinterface.Controller):
                 LOGGER.debug('Setting precipitation to: ' + str(rd['precip'][self.tag['precip_summary']]))
                 self.update_driver('GV6', rd['precip'][self.tag['precip_summary']])
             if 'temp' in rd:
-                LOGGER.debug('Setting max temp to: ' + str(rd['temp'][self.tag['precip_summary']]))
+                LOGGER.debug('Setting max temp to: ' + str(rd['temp'][self.tag['temp_max']]))
                 self.update_driver('GV0', rd['temp'][self.tag['temp_max']])
         except Exception as e:
             LOGGER.error('Precipitation and max/min/average summary update failure')
