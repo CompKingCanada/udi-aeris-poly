@@ -473,6 +473,7 @@ class Controller(polyinterface.Controller):
             {'driver': 'GV12', 'value': 0, 'uom': 25},     # climate intensity
             {'driver': 'GV13', 'value': 0, 'uom': 25},     # climate conditions
             {'driver': 'GV14', 'value': 0, 'uom': 22},     # cloud conditions
+            {'driver': 'GV20', 'value': 0, 'uom': 106},    # mm/day ET0
             {'driver': 'GV22', 'value': 0, 'uom': 22},     # max humidity
             {'driver': 'GV23', 'value': 0, 'uom': 22},     # min humidity
             {'driver': 'DISTANC', 'value': 0, 'uom': 83},  # visibility
