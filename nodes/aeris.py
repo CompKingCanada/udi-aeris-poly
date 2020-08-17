@@ -173,6 +173,7 @@ class Controller(polyinterface.Controller):
             self.tag['temp_min'] = 'minTempC'
             self.tag['temp_avg'] = 'avgC'
             self.tag['temp_max'] = 'maxTempC'
+            self.tag['temp_max_summ'] = 'maxC'
             self.tag['humidity_min'] = 'minHumidity'
             self.tag['humidity_avg'] = 'avg'
             self.tag['humidity_max'] = 'maxHumidity'
@@ -205,6 +206,7 @@ class Controller(polyinterface.Controller):
             self.tag['temp_min'] = 'minTempF'
             self.tag['temp_avg'] = 'avgF'
             self.tag['temp_max'] = 'maxTempF'
+            self.tag['temp_max_summ'] = 'maxF'
             self.tag['humidity_min'] = 'minHumidity'
             self.tag['humidity_avg'] = 'avg'
             self.tag['humidity_max'] = 'maxHumidity'
@@ -332,6 +334,8 @@ class Controller(polyinterface.Controller):
             if 'temp' in rd:
                 LOGGER.debug('Setting avg temp to: ' + str(rd['temp'][self.tag['temp_avg']]))
                 self.update_driver('GV24', rd['temp'][self.tag['temp_avg']])
+                LOGGER.debug('Setting max temp to: ' + str(rd['temp'][self.tag['temp_max_summ']]))
+                self.update_driver('GV0', rd['temp'][self.tag['temp_max_summ']])
         except Exception as e:
             LOGGER.error('Precipitation and max/min/average summary update failure')
             LOGGER.error(e)
