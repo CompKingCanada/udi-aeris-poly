@@ -282,10 +282,6 @@ class Controller(polyinterface.Controller):
             self.update_driver('GV3', ob[self.tag['heatindex']])
             self.update_driver('GV4', ob[self.tag['windchill']])
             self.update_driver('GV2', ob[self.tag['feelslike']])
-            # self.update_driver('GV0', ob[self.tag['temp_max']]) - Comes from Summary
-            # self.update_driver('GV1', ob[self.tag['temp_min']]) - Comes from Summary
-            # self.update_driver('GV22', ob[self.tag['humidity_max']]) - Comes from Summary
-            # self.update_driver('GV23', ob[self.tag['humidity_min']]) - Comes from Summary
             self.update_driver('SOLRAD', ob[self.tag['solarrad']])
             self.update_driver('UV', ob[self.tag['uv']])
             self.update_driver('GV15', ob[self.tag['snow']])
@@ -343,24 +339,22 @@ class Controller(polyinterface.Controller):
                 LOGGER.debug('Setting precipitation to: ' + str(rd['precip'][self.tag['precip_summary']]))
                 self.update_driver('GV6', rd['precip'][self.tag['precip_summary']])
             if 'temp' in rd:
-                # LOGGER.debug('Setting avg temp to: ' + str(rd['temp'][self.tag['temp_avg']]))
-                # self.update_driver('GV24', rd['temp'][self.tag['temp_avg']])
+                LOGGER.debug('Setting avg temp to: ' + str(rd['temp'][self.tag['temp_avg']]))
+                self.update_driver('GV10', rd['temp'][self.tag['temp_avg']])
                 LOGGER.debug('Setting max temp to: ' + str(rd['temp'][self.tag['temp_max_summ']]))
                 self.update_driver('GV0', rd['temp'][self.tag['temp_max_summ']])
                 LOGGER.debug('Setting min temp to: ' + str(rd['temp'][self.tag['temp_min_summ']]))
                 self.update_driver('GV1', rd['temp'][self.tag['temp_min_summ']])
             if 'wind' in rd:
                 LOGGER.debug('Setting avg wind to: ' + str(rd['wind'][self.tag['wind_avg']]))
-                self.update_driver('GV21', rd['wind'][self.tag['wind_avg']])
+                self.update_driver('GV9', rd['wind'][self.tag['wind_avg']])
                 LOGGER.debug('Setting max wind to: ' + str(rd['wind'][self.tag['wind_max_summ']]))
                 self.update_driver('GV7', rd['wind'][self.tag['wind_max_summ']])
                 LOGGER.debug('Setting min wind to: ' + str(rd['wind'][self.tag['wind_min_summ']]))
                 self.update_driver('GV8', rd['wind'][self.tag['wind_min_summ']])
-           # if 'rh' in rd: 
-           #     LOGGER.debug('Setting max humid to: ' + str(rd['rh'][self.tag['humidity_max_summ']]))
-           #     self.update_driver('GV22', rd['rh'][self.tag['humidity_max_summ']])
-           #     LOGGER.debug('Setting min humid to: ' + str(rd['rh'][self.tag['humidity_min_summ']]))
-           #     self.update_driver('GV23', rd['rh'][self.tag['humidity_min_summ']])
+            if 'rh' in rd: 
+                LOGGER.debug('Setting max humid to: ' + str(rd['rh'][self.tag['humidity_avg']]))
+                self.update_driver('GV17', rd['rh'][self.tag['humidity_avg']])                
         except Exception as e:
             LOGGER.error('Precipitation and max/min/average summary update failure')
             LOGGER.error(e)
@@ -506,17 +500,15 @@ class Controller(polyinterface.Controller):
             {'driver': 'GV6', 'value': 0, 'uom': 82},      # rain
             {'driver': 'GV7', 'value': 0, 'uom': 32},      # max wind
             {'driver': 'GV8', 'value': 0, 'uom': 32},      # min wind
+            {'driver': 'GV9', 'value': 0, 'uom': 32},      # avg wind 
+            {'driver': 'GV10', 'value': 0, 'uom': 4},      # avg temp              
             {'driver': 'GV15', 'value': 0, 'uom': 82},     # snow depth
             {'driver': 'GV11', 'value': 0, 'uom': 25},     # climate coverage
             {'driver': 'GV12', 'value': 0, 'uom': 25},     # climate intensity
             {'driver': 'GV13', 'value': 0, 'uom': 25},     # climate conditions
             {'driver': 'GV14', 'value': 0, 'uom': 22},     # cloud conditions
-            {'driver': 'GV20', 'value': 1.23456, 'uom': 106},    # mm/day ETo
-            {'driver': 'GV21', 'value': 2.3456, 'uom': 32},     # avg wind
-            {'driver': 'GV22', 'value': 0, 'uom': 22},     # max humidity
-            {'driver': 'GV23', 'value': 0, 'uom': 22},     # min humidity
-            {'driver': 'GV24', 'value': 0, 'uom': 4},      # avg temp
-            {'driver': 'GV25', 'value': 0, 'uom': 22},     # avg humidity
+            {'driver': 'GV17', 'value': 0, 'uom': 22},     # avg humidity        
+            {'driver': 'GV20', 'value': 1.23456, 'uom': 106},    # mm/day ETo            
             {'driver': 'DISTANC', 'value': 0, 'uom': 83},  # visibility
             {'driver': 'SOLRAD', 'value': 0, 'uom': 74},   # solar radiataion
             {'driver': 'UV', 'value': 0, 'uom': 71},       # uv index
