@@ -45,6 +45,22 @@
     </cmds>
   </nodeDef>
 
+<nodeDef id="weather" nodeType="139" nls="ctl">
+    <editors />
+    <sts>
+      <st id="GV0" editor="TEMPERATURE" />
+      <st id="GV1" editor="TEMPERATURE" />
+      <st id="GV10" editor="TEMPERATURE" />	    
+      <st id="GV7" editor="SPEED" />
+      <st id="GV8" editor="SPEED" />
+      <st id="GV20" editor="ET" />
+      <st id="GV9" editor="SPEED" />
+      <st id="GV17" editor="PERCENT" />
+	    
+    </sts>
+  </nodeDef>
+
+
   <nodeDef id="daily" nodeType="139" nls="ctl">
     <editors />
     <sts>
