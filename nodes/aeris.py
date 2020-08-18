@@ -540,7 +540,7 @@ class Controller(polyinterface.Controller):
             {'driver': 'GV13', 'value': 0, 'uom': 25},     # climate conditions
             {'driver': 'GV14', 'value': 0, 'uom': 22},     # cloud conditions
             {'driver': 'GV17', 'value': 0, 'uom': 22},     # avg humidity        
-            {'driver': 'GV20', 'value': 1.23456, 'uom': 106},    # mm/day ETo            
+            {'driver': 'GV20', 'value': 0, 'uom': 106},    # mm/day ETo            
             {'driver': 'DISTANC', 'value': 0, 'uom': 83},  # visibility
             {'driver': 'SOLRAD', 'value': 0, 'uom': 74},   # solar radiataion
             {'driver': 'UV', 'value': 0, 'uom': 71},       # uv index
