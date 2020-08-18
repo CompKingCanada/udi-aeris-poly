@@ -373,7 +373,8 @@ class Controller(polyinterface.Controller):
             Tmin = rd['temp'][self.tag['temp_avg']]
             Tmax = rd['temp'][self.tag['temp_avg']]
             LOGGER.debug('Setting Tmin and Tmax: ' + str(Tmin))
-            Ws = forecast[tags['windspeed']]
+            Ws = rd['wind'][self.tag['wind_avg']]
+            LOGGER.debug('Setting Ws: ' + str(Ws))
             #if self.units != 'metric':
             #    LOGGER.info('Conversion of temperature/wind speed required')
             #    Tmin = et3.FtoC(Tmin)
