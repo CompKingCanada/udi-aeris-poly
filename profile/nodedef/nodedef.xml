@@ -8,6 +8,7 @@
       <st id="CLIHUM" editor="PERCENT" />
       <st id="GV0" editor="TEMPERATURE" />
       <st id="GV1" editor="TEMPERATURE" />
+      <st id="DEWPT" editor="TEMPERATURE" />	    
       <st id="GV7" editor="SPEED" />
       <st id="GV8" editor="SPEED" />
       <st id="SOLRAD" editor="SOLARRAD" />
