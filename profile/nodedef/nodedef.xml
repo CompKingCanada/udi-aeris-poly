@@ -5,8 +5,6 @@
       <st id="ST" editor="bool" />
       <st id="CLITEMP" editor="TEMPERATURE" />
       <st id="CLIHUM" editor="PERCENT" />
-      <st id="GV0" editor="TEMPERATURE" />
-      <st id="GV1" editor="TEMPERATURE" />
       <st id="DEWPT" editor="TEMPERATURE" />
       <st id="BARPRES" editor="PRESSURE" />
       <st id="WINDDIR" editor="DEGREES" />
@@ -22,15 +20,8 @@
       <st id="GV4" editor="TEMPERATURE" />
       <st id="GV6" editor="RAIN" />
 	  <st id="GV15" editor="RAIN" />
-      <st id="GV10" editor="TEMPERATURE" />	    
-      <st id="GV7" editor="SPEED" />
-      <st id="GV8" editor="SPEED" />
       <st id="SOLRAD" editor="SOLARRAD" />
-      <st id="UV" editor="UV" />
-      <st id="GV20" editor="ET" />
-      <st id="GV9" editor="SPEED" />
-      <st id="GV17" editor="PERCENT" />
-	    
+      <st id="UV" editor="UV" />   
     </sts>
     <cmds>
       <sends />
@@ -53,10 +44,9 @@
       <st id="GV10" editor="TEMPERATURE" />	    
       <st id="GV7" editor="SPEED" />
       <st id="GV8" editor="SPEED" />
-      <st id="GV20" editor="ET" />
-      <st id="GV9" editor="SPEED" />
+      <st id="GV9" editor="SPEED" />	    
       <st id="GV17" editor="PERCENT" />
-	    
+      <st id="GV20" editor="ET" />	    
     </sts>
   </nodeDef>
 
