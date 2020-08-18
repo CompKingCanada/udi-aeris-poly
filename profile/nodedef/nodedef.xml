@@ -21,7 +21,15 @@
       <st id="GV6" editor="RAIN" />
 	  <st id="GV15" editor="RAIN" />
       <st id="SOLRAD" editor="SOLARRAD" />
-      <st id="UV" editor="UV" />   
+      <st id="UV" editor="UV" />
+      <st id="GV0" editor="TEMPERATURE" />
+      <st id="GV1" editor="TEMPERATURE" />
+      <st id="GV10" editor="TEMPERATURE" />	    
+      <st id="GV7" editor="SPEED" />
+      <st id="GV8" editor="SPEED" />
+      <st id="GV9" editor="SPEED" />	    
+      <st id="GV17" editor="PERCENT" />
+      <st id="GV20" editor="ET" />
     </sts>
     <cmds>
       <sends />
@@ -35,21 +43,6 @@
       </accepts>
     </cmds>
   </nodeDef>
-
-<nodeDef id="weatherday" nodeType="139" nls="ctl">
-    <editors />
-    <sts>
-      <st id="GV0" editor="TEMPERATURE" />
-      <st id="GV1" editor="TEMPERATURE" />
-      <st id="GV10" editor="TEMPERATURE" />	    
-      <st id="GV7" editor="SPEED" />
-      <st id="GV8" editor="SPEED" />
-      <st id="GV9" editor="SPEED" />	    
-      <st id="GV17" editor="PERCENT" />
-      <st id="GV20" editor="ET" />	    
-    </sts>
-  </nodeDef>
-
 
   <nodeDef id="daily" nodeType="139" nls="ctl">
     <editors />
