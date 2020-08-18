@@ -368,7 +368,7 @@ class Controller(polyinterface.Controller):
             #  convert these.
             
             #J = datetime.datetime.fromtimestamp(epoch).timetuple().tm_yday
-            J = 100
+            J = 230
 
             Tmin = rd['temp'][self.tag['temp_avg']]
             Tmax = rd['temp'][self.tag['temp_avg']]
