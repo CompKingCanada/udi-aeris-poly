@@ -360,7 +360,35 @@ class Controller(polyinterface.Controller):
             LOGGER.error('Precipitation and max/min/average summary update failure')
             LOGGER.error(e)
             self.update_driver('GV6', precipitation)
-                
+            
+        try:
+            # Calculate ETo based on actual values
+            # Calculate ETo
+            #  Temp is in degree C and windspeed is in m/s, we may need to
+            #  convert these.
+            J = datetime.datetime.fromtimestamp(epoch).timetuple().tm_yday
+
+            Tmin = rd[tags['temp']['temp_avg']]
+            Tmax = rd[tags['temp']['temp_avg']]
+            LOGGER.debug('Setting Tmin and Tmax: ' + str(Tmin))
+            Ws = forecast[tags['windspeed']]
+            #if self.units != 'metric':
+            #    LOGGER.info('Conversion of temperature/wind speed required')
+            #    Tmin = et3.FtoC(Tmin)
+            #    Tmax = et3.FtoC(Tmax)
+            #    Ws = et3.mph2ms(Ws)
+            #else:
+            #    Ws = et3.kph2ms(Ws)
+
+            et0 = et3.evapotranspriation(Tmax, Tmin, None, Ws, float(elevation), forecast[tags['humidity_max']], forecast[tags['humidity_min']], latitude, float(plant_type), J)
+            if self.units == 'metric' or self.units == 'si' or self.units.startswith('m'):
+                self.update_driver('GV20', round(et0, 2), force)
+            else:
+                self.update_driver('GV20', self.mm2inch(et0), force, prec=3)
+            LOGGER.info("ETo Actuals = %f %f" % (et0, self.mm2inch(et0)))
+        except Exception as e:
+            LOGGER.error('ETo based on actuals update failure')
+            LOGGER.error(e)
 
     def query_forecast(self):
         if not self.configured:
