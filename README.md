@@ -68,6 +68,14 @@ The settings for this node are:
  * sys.node.[address].GV2     (current feels like temperature)
  * sys.node.[address].GV3     (current heat index temperature)
  * sys.node.[address].GV4     (current wind chill temperature)
+ * sys.node.[address].GV0     (high temperature)
+ * sys.node.[address].GV1     (low temperature)
+ * sys.node.[address].GV7     (max wind speed)
+ * sys.node.[address].GV8     (min wind speed)
+ * sys.node.[address].GV9     (average wind speed)
+ * sys.node.[address].GV10    (average temperature)
+ * sys.node.[address].GV17    (average humidity)
+ * sys.node.[address].GV20    (calculated ETo for the day)
 
 ### Forecast node
  * sys.node.[address].CLIHUM  (forecasted humidity)
