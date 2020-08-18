@@ -19,6 +19,7 @@ import json
 import node_funcs
 from nodes import aeris_daily
 from nodes import uom
+from nodes import et3
 from nodes import weather_codes as wx
 
 LOGGER = polyinterface.LOGGER
