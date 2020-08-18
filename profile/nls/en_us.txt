@@ -41,9 +41,6 @@ ST-ctl-GV20-NAME = Evapotranspiration
 ND-daily-NAME = Daily Forecast
 ND-daily-ICON = Weather
 
-ND-weatherday-NAME = Daily Summary
-ND-daily-ICON = Weather
-
 EN_RAINTYPE-0 = None
 EN_RAINTYPE-1 = Rain
 EN_RAINTYPE-2 = Hail
