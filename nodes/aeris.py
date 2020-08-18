@@ -370,8 +370,8 @@ class Controller(polyinterface.Controller):
             #J = datetime.datetime.fromtimestamp(epoch).timetuple().tm_yday
             J = 100
 
-            Tmin = rd[tags['temp']['temp_avg']]
-            Tmax = rd[tags['temp']['temp_avg']]
+            Tmin = GV10
+            Tmax = GV10
             LOGGER.debug('Setting Tmin and Tmax: ' + str(Tmin))
             Ws = forecast[tags['windspeed']]
             #if self.units != 'metric':
