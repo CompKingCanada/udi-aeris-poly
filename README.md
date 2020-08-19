@@ -95,6 +95,8 @@ The settings for this node are:
  * sys.node.[address].GV15    (forecasted snowfall)
  * sys.node.[address].GV7     (forecasted max wind speed)
  * sys.node.[address].GV8     (forecasted min wind speed)
+ * sys.node.[address].GV16    (forecasted max humidity)
+ * sys.node.[address].GV17    (forecasted min humidity)
  * sys.node.[address].GV18    (forecasted precent chance of precipitation)
  * sys.node.[address].GV20    (calculated ETo for the day)
 
