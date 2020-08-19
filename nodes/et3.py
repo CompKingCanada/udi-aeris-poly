@@ -205,7 +205,7 @@ if __name__ == '__main__':
     # 0.23 is the crop / type coefficent
     # 289 is day of year
 
-    et0 = evapotranspriation(27.3, 10.7, None, 1.3, 401.33, 91, 36, 36.82, 0.23, 289)
+    et0 = evapotranspriation(27.3, 10.7, None, 1.3, 401.33, 91, 36, 36.82, 0.23, 289, None)
     print("et0 = ", et0)
 
 
