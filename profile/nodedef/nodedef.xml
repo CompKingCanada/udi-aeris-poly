@@ -63,6 +63,8 @@
 	  <st id="GV15" editor="RAIN" />
       <st id="GV7" editor="SPEED" />
       <st id="GV8" editor="SPEED" />
+      <st id="GV16" editor="PERCENT" />	    
+      <st id="GV17" editor="PERCENT" />  
       <st id="GV18" editor="PERCENT" />
       <st id="UV" editor="UV" />
       <st id="GV20" editor="ET" />
