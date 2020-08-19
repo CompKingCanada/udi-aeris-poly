@@ -112,12 +112,13 @@ def calc_solar_radiation(t_min, t_max, lat, declination, julian_day):
 # latitude in degrees
 # avg_ws in m/s
 # solar_radiation in W/m2
-def evapotranspriation(max_t, min_t, solar_radiation, avg_ws, elevation, max_h, min_h, latitude, canopy_coefficient, day):
+def evapotranspriation(max_t, min_t, solar_radiation, avg_ws, elevation, max_h, min_h, latitude, canopy_coefficient, day, mean_daily_temp):
 
     julian_day = day
 
     # step 1, mean daily air temperature C
-    mean_daily_temp = (max_t + min_t) / 2.0
+    if mean_daily_temp == None:
+       mean_daily_temp = (max_t + min_t) / 2.0
 
     # step 2, mean solar radiation in mgajoules / m2
     #Rs = w2mj(solar_radiation)
