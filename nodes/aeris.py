@@ -372,6 +372,7 @@ class Controller(polyinterface.Controller):
 
             Tmax = rd['temp'][self.tag['temp_max_summ']]
             Tmin = rd['temp'][self.tag['temp_min_summ']]
+            Tavg = rd['temp'][self.tag['temp_avg']]
             Ws = rd['wind'][self.tag['wind_avg']]
             LOGGER.debug('Setting Ws: ' + str(Ws))
             #if self.units != 'metric':
