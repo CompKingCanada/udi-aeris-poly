@@ -74,7 +74,8 @@ The settings for this node are:
  * sys.node.[address].GV8     (min wind speed)
  * sys.node.[address].GV9     (average wind speed)
  * sys.node.[address].GV10    (average temperature)
- * sys.node.[address].GV17    (average humidity)
+ * sys.node.[address].GV16    (max humidity)
+ * sys.node.[address].GV17    (min humidity)
  * sys.node.[address].GV20    (calculated ETo for the day)
 
 ### Forecast node
