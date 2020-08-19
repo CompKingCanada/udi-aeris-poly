@@ -383,7 +383,7 @@ class Controller(polyinterface.Controller):
             #else:
             #    Ws = et3.kph2ms(Ws)
 
-            et0 = et3.evapotranspriation(Tmax, Tmin, None, Ws, float(self.params.get('Elevation')), rd['rh'][self.tag['humidity_avg']], rd['rh'][self.tag['humidity_avg']], 51.12, float(self.params.get('Plant Type')), J)
+            et0 = et3.evapotranspriation(Tmax, Tmin, None, Ws, float(self.params.get('Elevation')), rd['rh'][self.tag['humidity_max_summ']], rd['rh'][self.tag['humidity_min_summ']], 51.12, float(self.params.get('Plant Type')), J)
             #if self.units == 'metric' or self.units == 'si' or self.units.startswith('m'):
             self.update_driver('GV20', round(et0, 2))
             #else:
