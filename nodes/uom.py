@@ -43,7 +43,8 @@ def get_uom(units):
             'GV15': 82,     # snow depth
             'DISTANC': 83,  # visibility (kilometers)
             'UV': 71,       # UV index
-            'GV17': 22,     # avg humidity
+            'GV16': 22,     # max humidity
+            'GV17': 22,     # min humidity
             'GV18': 22,     # chance of precipitation
             'GV19': 25,     # day of week
             'GV20': 106,    # ETo            
@@ -77,7 +78,8 @@ def get_uom(units):
             'GV15': 105,    # snow depth
             'DISTANC': 116, # visibility
             'UV': 71,       # UV index
-            'GV17': 22,     # avg humidity
+            'GV16': 22,     # max humidity
+            'GV17': 22,     # min humidity
             'GV18': 22,     # chance of precipitation
             'GV19': 25,     # day of week
             'GV20': 120,    # ETo
@@ -111,7 +113,8 @@ def get_uom(units):
             'GV15': 105,    # snow depth
             'DISTANC': 116, # visibility
             'UV': 71,       # UV index
-            'GV17': 22,     # avg humidity
+            'GV16': 22,     # max humidity
+            'GV17': 22,     # min humidity
             'GV18': 22,     # chance of precipitation
             'GV19': 25,     # day of week
             'GV20': 120,    # ETo
