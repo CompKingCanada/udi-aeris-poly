@@ -377,8 +377,6 @@ class Controller(polyinterface.Controller):
             Ws = rd['wind'][self.tag['wind_avg']]
             LOGGER.debug('Tmax= '+str(Tmax)+'C')
             LOGGER.debug('Tmin= '+str(Tmin)+'C')           
-            for i in self:
-                LOGGER.debug(str(i)+str(d[i]))
             LOGGER.debug('Elevation= '+float(self.params.get('Elevation')))
             LOGGER.debug('Hmax= '+str(rd['rh'][self.tag['humidity_max_summ']]))
             LOGGER.debug('Hmin= '+str(rd['rh'][self.tag['humidity_min_summ']]))
