@@ -8,7 +8,7 @@
     "description": "Add weather data to the ISY994",
     "notice": "",
     "shortPoll": "200",
-    "longPoll": "600",
+    "longPoll": "900",
     "profile_version": "1.0.5",
     "credits": [ {
 	"title": "AERIS Weather: A node server for weather data",
