@@ -379,7 +379,7 @@ class Controller(polyinterface.Controller):
             Tmin = rd['temp'][self.tag['temp_min_summ']]
             Tavg = rd['temp'][self.tag['temp_avg']]
             SolRad = rd['solrad'][self.tag['solarrad_summ']]
-            if SolRad == Null:
+            if SolRad == 'Null':
                SolRad = None
             Elevation = float(self.params.get('Elevation'))
             Hmax = rd['rh'][self.tag['humidity_max_summ']]
