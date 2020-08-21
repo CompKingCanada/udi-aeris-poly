@@ -382,13 +382,13 @@ class Controller(polyinterface.Controller):
             LOGGER.debug('Setting Ws: %f m/s' % (et3.kph2ms(Ws)))
             LOGGER.debug('J= '+str(J))
             self.set_driver_uom(self.params.get('Units'))
-            #if self.units != 'metric':
-            #    LOGGER.info('Conversion of temperature/wind speed required')
-            #    Tmin = et3.FtoC(Tmin)
-            #    Tmax = et3.FtoC(Tmax)
-            #    Ws = et3.mph2ms(Ws)
-            #else:
-            #    Ws = et3.kph2ms(Ws)
+            if self.units != 'metric':
+                LOGGER.info('Conversion of temperature/wind speed required')
+                Tmin = et3.FtoC(Tmin)
+                Tmax = et3.FtoC(Tmax)
+                Ws = et3.mph2ms(Ws)
+            else:
+                Ws = et3.kph2ms(Ws)
 
             et0 = et3.evapotranspriation(Tmax, Tmin, None, et3.kph2ms(Ws), float(self.params.get('Elevation')), rd['rh'][self.tag['humidity_max_summ']], rd['rh'][self.tag['humidity_min_summ']], 51.12, float(self.params.get('Plant Type')), J, Tavg)
             #if self.units == 'metric' or self.units == 'si' or self.units.startswith('m'):
