@@ -403,7 +403,7 @@ class Controller(polyinterface.Controller):
                self.update_driver('GV20', round(et0, 2))
             else:
                self.update_driver('GV20', self.mm2inch(et0), 3)
-            LOGGER.info("ETo Actuals = %f" % (et0))
+            LOGGER.info("ETo Actuals= %f %f" % (et0, self.mm2inch(et0)))
         except Exception as e:
             LOGGER.error('ETo based on actuals update failure')
             LOGGER.error(e)
