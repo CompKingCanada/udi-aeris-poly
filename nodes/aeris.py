@@ -379,8 +379,8 @@ class Controller(polyinterface.Controller):
             LOGGER.debug('Tmin= '+str(Tmin)+'C')           
             LOGGER.debug(self)
             LOGGER.debug('Elevation= '+float(self.params.get('Elevation')))
-            LOGGER.debug('Hmax= '+rd['rh'][self.tag['humidity_max_summ']])
-            LOGGER.debug('Hmin= '+rd['rh'][self.tag['humidity_min_summ']])
+            LOGGER.debug('Hmax= '+str(rd['rh'][self.tag['humidity_max_summ']]))
+            LOGGER.debug('Hmin= '+str(rd['rh'][self.tag['humidity_min_summ']]))
             LOGGER.debug('Setting Ws: %f m/s' % (et3.kph2ms(Ws)))
             LOGGER.debug('J= '+str(J))
             #if self.units != 'metric':
