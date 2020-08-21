@@ -174,6 +174,7 @@ class Controller(polyinterface.Controller):
             self.tag['windchill'] = 'windchillC'
             self.tag['feelslike'] = 'feelslikeC'
             self.tag['solarrad'] = 'solradWM2'
+            self.tag['solarrad_summ'] = 'avgWM2'
             self.tag['sky'] = 'sky'
             self.tag['temp_min'] = 'minTempC'
             self.tag['temp_avg'] = 'avgC'
@@ -211,6 +212,7 @@ class Controller(polyinterface.Controller):
             self.tag['windchill'] = 'windchillF'
             self.tag['feelslike'] = 'feelslikeF'
             self.tag['solarrad'] = 'solradWM2'
+            self.tag['solarrad_summ'] = 'avgWM2'
             self.tag['sky'] = 'sky'
             self.tag['temp_min'] = 'minTempF'
             self.tag['temp_avg'] = 'avgF'
@@ -358,7 +360,7 @@ class Controller(polyinterface.Controller):
                 LOGGER.debug('Setting max humid to: ' + str(rd['rh'][self.tag['humidity_max_summ']]))
                 self.update_driver('GV16', rd['rh'][self.tag['humidity_max_summ']])         
                 LOGGER.debug('Setting min humid to: ' + str(rd['rh'][self.tag['humidity_min_summ']]))
-                self.update_driver('GV17', rd['rh'][self.tag['humidity_min_summ']])                         
+                self.update_driver('GV17', rd['rh'][self.tag['humidity_min_summ']])                  
         except Exception as e:
             LOGGER.error('Precipitation and max/min/average summary update failure')
             LOGGER.error(e)
@@ -376,6 +378,9 @@ class Controller(polyinterface.Controller):
             Tmax = rd['temp'][self.tag['temp_max_summ']]
             Tmin = rd['temp'][self.tag['temp_min_summ']]
             Tavg = rd['temp'][self.tag['temp_avg']]
+            SolRad = rd['solrad'][self.tag['solarrad_summ']]
+            if SolRad == Null:
+               SolRad = None
             Elevation = float(self.params.get('Elevation'))
             Hmax = rd['rh'][self.tag['humidity_max_summ']]
             Hmin = rd['rh'][self.tag['humidity_min_summ']]
@@ -395,10 +400,11 @@ class Controller(polyinterface.Controller):
             LOGGER.debug('Elevation= '+str(Elevation))
             LOGGER.debug('Hmax= '+str(Hmax))
             LOGGER.debug('Hmin= '+str(Hmin))
+            LOGGER.debug('SolRad= '+str(SolRad)+'WM2')  
             LOGGER.debug('J= '+str(J))
             LOGGER.debug('Latitude= '+str(Latitude))
             LOGGER.debug('Setting Ws: %f m/s' % (Ws))
-            et0 = et3.evapotranspriation(Tmax, Tmin, None, Ws, Elevation, Hmax, Hmin, Latitude, float(self.params.get('Plant Type')), J, Tavg)
+            et0 = et3.evapotranspriation(Tmax, Tmin, SolRad, Ws, Elevation, Hmax, Hmin, Latitude, float(self.params.get('Plant Type')), J, Tavg)
             if self.units == 'metric' or self.units == 'si' or self.units.startswith('m'):
                self.update_driver('GV20', round(et0, 2))
             else:
