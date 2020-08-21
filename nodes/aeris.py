@@ -369,7 +369,7 @@ class Controller(polyinterface.Controller):
             
             #J = datetime.datetime.fromtimestamp(epoch).timetuple().tm_yday
             J = 232
-            LL = int(rd['temp'][self.tag['timestamp']])
+            LL = rd['temp'][self.tag['timestamp']]
             LOGGER.debug('Timestamp ='+str(LL))
             Tmax = rd['temp'][self.tag['temp_max_summ']]
             Tmin = rd['temp'][self.tag['temp_min_summ']]
