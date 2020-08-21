@@ -370,12 +370,17 @@ class Controller(polyinterface.Controller):
             J = datetime.datetime.fromtimestamp(epoch).timetuple().tm_yday
             #J = 232
             #LL = rd['timestamp']
-            LOGGER.debug('J ='+str(J))
+            
             Tmax = rd['temp'][self.tag['temp_max_summ']]
             Tmin = rd['temp'][self.tag['temp_min_summ']]
             Tavg = rd['temp'][self.tag['temp_avg']]
             Ws = rd['wind'][self.tag['wind_avg']]
-            LOGGER.debug('Setting Ws: ' + str(Ws))
+            LOGGER.debug('Tmax ='+str(Tmax))
+            LOGGER.debug('Tmin ='+str(Tmin))           
+            
+            
+            LOGGER.debug('Setting Ws: %f m/s' % (et3.kph2ms(Ws)))
+            LOGGER.debug('J ='+str(J))
             #if self.units != 'metric':
             #    LOGGER.info('Conversion of temperature/wind speed required')
             #    Tmin = et3.FtoC(Tmin)
