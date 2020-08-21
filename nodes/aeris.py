@@ -368,27 +368,27 @@ class Controller(polyinterface.Controller):
             #  convert these.
             epoch = int(rd['timestamp'])
             J = datetime.datetime.fromtimestamp(epoch).timetuple().tm_yday
-            #J = 232
-            #LL = rd['timestamp']
+            self.units = self.params.get('Units')
+            if self.units != 'metric':
+                LOGGER.info('Conversion of temperature/wind speed required')
+                Tmin = et3.FtoC(Tmin)
+                Tmax = et3.FtoC(Tmax)
+                Tavg = et3.FtoC(Tavg)              
+                Ws = et3.mph2ms(Ws)
+            else:
+                LOGGER.info('Conversion of wind speed required')
+                Ws = et3.kph2ms(Ws)
             Tmax = rd['temp'][self.tag['temp_max_summ']]
             Tmin = rd['temp'][self.tag['temp_min_summ']]
             Tavg = rd['temp'][self.tag['temp_avg']]
             Ws = rd['wind'][self.tag['wind_avg']]
             LOGGER.debug('Tmax= '+str(Tmax)+'C')
             LOGGER.debug('Tmin= '+str(Tmin)+'C')           
+            LOGGER.debug('Tavg= '+str(Tavg)+'C')  
             LOGGER.debug('Elevation= '+str(float(self.params.get('Elevation'))))
             LOGGER.debug('Hmax= '+str(rd['rh'][self.tag['humidity_max_summ']]))
             LOGGER.debug('Hmin= '+str(rd['rh'][self.tag['humidity_min_summ']]))
             LOGGER.debug('J= '+str(J))
-            self.units = self.params.get('Units')
-            if self.units != 'metric':
-                LOGGER.info('Conversion of temperature/wind speed required')
-                Tmin = et3.FtoC(Tmin)
-                Tmax = et3.FtoC(Tmax)
-                Ws = et3.mph2ms(Ws)
-            else:
-                LOGGER.info('Conversion of wind speed required')
-                Ws = et3.kph2ms(Ws)
             LOGGER.debug('Setting Ws: %f m/s' % (Ws))
             et0 = et3.evapotranspriation(Tmax, Tmin, None, Ws, float(self.params.get('Elevation')), rd['rh'][self.tag['humidity_max_summ']], rd['rh'][self.tag['humidity_min_summ']], 51.12, float(self.params.get('Plant Type')), J, Tavg)
             #if self.units == 'metric' or self.units == 'si' or self.units.startswith('m'):
