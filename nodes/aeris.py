@@ -366,11 +366,11 @@ class Controller(polyinterface.Controller):
             # Calculate ETo
             #  Temp is in degree C and windspeed is in m/s, we may need to
             #  convert these.
-            
-            #J = datetime.datetime.fromtimestamp(epoch).timetuple().tm_yday
-            J = 232
-            LL = rd['timestamp']
-            LOGGER.debug('Timestamp ='+str(LL))
+            epoch = int(rd['timestamp'])
+            J = datetime.datetime.fromtimestamp(epoch).timetuple().tm_yday
+            #J = 232
+            #LL = rd['timestamp']
+            LOGGER.debug('J ='+str(J))
             Tmax = rd['temp'][self.tag['temp_max_summ']]
             Tmin = rd['temp'][self.tag['temp_min_summ']]
             Tavg = rd['temp'][self.tag['temp_avg']]
