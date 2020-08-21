@@ -132,9 +132,9 @@ class Controller(polyinterface.Controller):
         if extra == 'forecasts':
             request += '&filter=mdnt2mdnt,precise'
             request += '&limit=12'
-        elif extra == 'observations/summary':
-            request += '&fields=periods.summary.precip,periods.summary.temp,periods.summary.rh,periods.summary.wind'
-            request += '&filter=precise'
+        #elif extra == 'observations/summary':
+        #    request += '&fields=periods.summary.precip,periods.summary.temp,periods.summary.rh,periods.summary.wind,'
+        #    request += '&filter=precise'
         else:
             request += '&filter=precise'
 
@@ -369,7 +369,7 @@ class Controller(polyinterface.Controller):
             
             #J = datetime.datetime.fromtimestamp(epoch).timetuple().tm_yday
             J = 232
-            LL = rd[self.tag['timestamp']]
+            LL = rd[['periods']['summary]['timestamp']]
             LOGGER.debug('Timestamp ='+str(LL))
             Tmax = rd['temp'][self.tag['temp_max_summ']]
             Tmin = rd['temp'][self.tag['temp_min_summ']]
