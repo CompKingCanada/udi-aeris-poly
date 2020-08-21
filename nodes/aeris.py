@@ -120,7 +120,10 @@ class Controller(polyinterface.Controller):
 
     def shortPoll(self):
         self.query_conditions()
-
+    
+    def mm2inch(self, mm):
+        return mm/25.4
+        
     # Query for the condition an forecast data
     def get_weather_data(self, extra, lat=None, long=None):
         request = 'http://api.aerisapi.com/' + extra + '/'
