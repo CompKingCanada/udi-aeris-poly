@@ -396,6 +396,7 @@ class Controller(polyinterface.Controller):
             LOGGER.debug('Hmax= '+str(Hmax))
             LOGGER.debug('Hmin= '+str(Hmin))
             LOGGER.debug('J= '+str(J))
+            LOGGER.debug('Latitude= '+str(Latitude))
             LOGGER.debug('Setting Ws: %f m/s' % (Ws))
             et0 = et3.evapotranspriation(Tmax, Tmin, None, Ws, Elevation, Hmax, Hmin, Latitude, float(self.params.get('Plant Type')), J, Tavg)
             if self.units == 'metric' or self.units == 'si' or self.units.startswith('m'):
