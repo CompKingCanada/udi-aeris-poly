@@ -9,7 +9,7 @@
     "notice": "",
     "shortPoll": "200",
     "longPoll": "900",
-    "profile_version": "1.0.5",
+    "profile_version": "1.0.4",
     "credits": [ {
 	"title": "AERIS Weather: A node server for weather data",
     	"author": "Bob Paauwe",
