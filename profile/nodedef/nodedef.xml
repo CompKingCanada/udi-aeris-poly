@@ -53,18 +53,18 @@
       <st id="GV1" editor="TEMPERATURE" />
       <st id="CLIHUM" editor="PERCENT" />
       <st id="BARPRES" editor="PRESSURE" />
-      <st id="GV14" editor="PERCENT" />
+      <st id="GV16" editor="PERCENT" />
+      <st id="GV17" editor="PERCENT" />	    
       <st id="GV11" editor="COVERAGE" />
       <st id="GV12" editor="INTENSITY" />
       <st id="GV13" editor="WEATHER" />
+      <st id="GV14" editor="PERCENT" />    
       <st id="SPEED" editor="SPEED" />
       <st id="GV5" editor="SPEED" />
-      <st id="GV6" editor="RAIN" />
-	  <st id="GV15" editor="RAIN" />
       <st id="GV7" editor="SPEED" />
       <st id="GV8" editor="SPEED" />
-      <st id="GV16" editor="PERCENT" />	    
-      <st id="GV17" editor="PERCENT" />  
+      <st id="GV6" editor="RAIN" />
+      <st id="GV15" editor="RAIN" />      
       <st id="GV18" editor="PERCENT" />
       <st id="UV" editor="UV" />
       <st id="GV20" editor="ET" />
