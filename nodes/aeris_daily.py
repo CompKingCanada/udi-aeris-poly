@@ -24,6 +24,8 @@ class DailyNode(polyinterface.Node):
             {'driver': 'GV0', 'value': 0, 'uom': 4},       # high temp
             {'driver': 'GV1', 'value': 0, 'uom': 4},       # low temp
             {'driver': 'CLIHUM', 'value': 0, 'uom': 22},   # humidity
+            {'driver': 'GV16', 'value': 0, 'uom': 22},     # humidity max
+            {'driver': 'GV17', 'value': 0, 'uom': 22},     # humidity min                                            
             {'driver': 'BARPRES', 'value': 0, 'uom': 117}, # pressure
             {'driver': 'GV11', 'value': 0, 'uom': 25},     # coverage
             {'driver': 'GV12', 'value': 0, 'uom': 25},     # intensity
@@ -31,14 +33,12 @@ class DailyNode(polyinterface.Node):
             {'driver': 'GV14', 'value': 0, 'uom': 22},     # clouds
             {'driver': 'SPEED', 'value': 0, 'uom': 32},    # wind speed
             {'driver': 'GV5', 'value': 0, 'uom': 32},      # gust speed
-            {'driver': 'GV6', 'value': 0, 'uom': 82},      # precipitation
-            {'driver': 'GV15', 'value': 0, 'uom': 82},     # snow depth
             {'driver': 'GV7', 'value': 0, 'uom': 32},      # wind speed max
             {'driver': 'GV8', 'value': 0, 'uom': 32},      # wind speed min
-            {'driver': 'GV16', 'value': 0, 'uom': 22},     # humidity max
-            {'driver': 'GV17', 'value': 0, 'uom': 22},     # humidity max                        
+            {'driver': 'GV6', 'value': 0, 'uom': 82},      # precipitation
+            {'driver': 'GV15', 'value': 0, 'uom': 82},     # snow depth
             {'driver': 'GV18', 'value': 0, 'uom': 22},     # pop
-            {'driver': 'UV', 'value': 0, 'uom': 71},       # UV index
+            {'driver': 'UV', 'value': 0, 'uom': 71},       # UV index                 
             {'driver': 'GV20', 'value': 0, 'uom': 106},    # mm/day
             ]
     uom = {'GV19': 25,
