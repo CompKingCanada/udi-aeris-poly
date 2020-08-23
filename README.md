@@ -21,9 +21,9 @@ MIT license.
 The settings for this node are:
 
 #### Short Poll
-   * How often to poll the AERIS weather service for current condition data (in seconds). Note that the PWS partner plan only allows for 1000 requests per day so set this appropriately.
+   * How often to poll the AERIS weather service for current condition data (in seconds). Note that the PWS partner plan only allows for 1000 requests per day so set this appropriately.  Each run of Short Poll uses 2 API calls.
 #### Long Poll
-   * How often to poll the AERIS weather service for forecast data (in seconds). Note that the data is only updated every 10 minutes. Setting this to less may result in exceeding the free service rate limit.
+   * How often to poll the AERIS weather service for forecast data (in seconds). Note that the data is only updated every 15 minutes. Setting this to less may result in exceeding the free service rate limit.
 #### ClientID
 	* Your AERIS client ID, needed to authorize the connection the the AERIS API.
 #### ClientSecret
@@ -68,6 +68,15 @@ The settings for this node are:
  * sys.node.[address].GV2     (current feels like temperature)
  * sys.node.[address].GV3     (current heat index temperature)
  * sys.node.[address].GV4     (current wind chill temperature)
+ * sys.node.[address].GV0     (high temperature)
+ * sys.node.[address].GV1     (low temperature)
+ * sys.node.[address].GV7     (max wind speed)
+ * sys.node.[address].GV8     (min wind speed)
+ * sys.node.[address].GV9     (average wind speed)
+ * sys.node.[address].GV10    (average temperature)
+ * sys.node.[address].GV16    (max humidity)
+ * sys.node.[address].GV17    (min humidity)
+ * sys.node.[address].GV20    (calculated ETo for the day)
 
 ### Forecast node
  * sys.node.[address].CLIHUM  (forecasted humidity)
@@ -86,6 +95,8 @@ The settings for this node are:
  * sys.node.[address].GV15    (forecasted snowfall)
  * sys.node.[address].GV7     (forecasted max wind speed)
  * sys.node.[address].GV8     (forecasted min wind speed)
+ * sys.node.[address].GV16    (forecasted max humidity)
+ * sys.node.[address].GV17    (forecasted min humidity)
  * sys.node.[address].GV18    (forecasted precent chance of precipitation)
  * sys.node.[address].GV20    (calculated ETo for the day)
 
